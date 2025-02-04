@@ -5,7 +5,8 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import Logo from "../images/Footer/Logo 2.png";
+
+import Logo from "../../images/navbarimg/Logo 1.png";
 
 const Footer = () => {
   return (
@@ -44,7 +45,7 @@ const Footer = () => {
               <Typography variant="body2" align="center" sx={{ mt: 1 }}>
                 Be sure to take a look at our
               </Typography>
-              <Link href="#" sx={{ color: "red", textDecorationColor: "red", fontWeight: "bold", mt: 2, alignContent: "center" }}>
+              <Link href="#" sx={{ color: "#CC0000", textDecorationColor: "#CC0000", fontWeight: "bold", mt: 2, alignContent: "center" }}>
                 Terms of Use & Privacy <br />Policy
               </Link>
 
