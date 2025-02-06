@@ -148,12 +148,20 @@ const Blogs = () => {
                       flexDirection: "column",
                     }}
                   >
+                    <Box  sx={{ padding: 2, display: "flex", justifyContent: "center" }}>
                     <CardMedia
                       component="img"
-                      height="180"
+                      
                       image={post.image}
                       alt={post.title}
+                      sx={{
+                        maxWidth: "100%",
+                        height: "180px",
+                        borderRadius: 2,
+                      }}
+    
                     />
+                    </Box>
                     <CardContent sx={{ flexGrow: 1 }}>
                       <Typography
                         variant="h6"

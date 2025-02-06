@@ -3,9 +3,9 @@ import {
   Typography,
   Box,
   Button,
-  Card,
-  CardContent,
+
   Grid,
+  useTheme, useMediaQuery,
   Container,
   Stack,
 } from "@mui/material";
@@ -19,31 +19,43 @@ import { AccessTime, Message } from "@mui/icons-material";
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import FormPage from "./FormPage";
 const BlogsType = () => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Box sx={{ backgroundColor: "#eef5fc", minHeight: "100vh" }}>
       {" "}
    
       {/* Header Section */}
       <Box
+      sx={{
+        backgroundImage: `url(${banner})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        textAlign: "center",
+        paddingTop: isSmallScreen ? "20px" : "35px",
+        height: isSmallScreen ? "100px" : "130px",
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Typography
+        variant="h4"
+        color="white"
+        gutterBottom
         sx={{
-          backgroundImage: `url(${banner})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        //   padding: 2,
-          textAlign: "center",
-          paddingTop:'35px',
-          height: '130px',
-          width: "100%", // Make it responsive
+          fontSize: { xs: "18px", sm: "24px", md: "28px" },
+          fontWeight: "bold",
         }}
       >
-        <Typography variant="h4" color="white" gutterBottom fontSize="28px">
-          <br />
-          Different Types Of Web Hosting: A Guide To Making The Best Decision
-        </Typography>
-        <Typography variant="subtitle1" color="#FFD43B">
-          Blog
-        </Typography>
-      </Box>
+        Different Types Of Web Hosting: A Guide To Making The Best Decision
+      </Typography>
+      <Typography variant="subtitle1" color="#FFD43B" sx={{ fontSize: { xs: "14px", sm: "16px" } }}>
+        Blog
+      </Typography>
+    </Box>
       <Container>
         {/* Content Section */}
         <Box sx={{ marginTop: 4 }}>

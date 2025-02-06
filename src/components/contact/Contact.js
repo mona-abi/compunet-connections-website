@@ -30,7 +30,7 @@ const Contact = () => {
         }}
       >
         {/* Left - Octagon Image Grid */}
-        <Box
+        {/* <Box
           sx={{
             width: { xs: "100%", sm: "400px", md: "500px" },
             height: { xs: "250px", md: "300px" },
@@ -56,7 +56,7 @@ const Contact = () => {
               }}
             />
           ))}
-        </Box>
+        </Box> */}
 
         {/* Right - Content Section */}
         <Paper
