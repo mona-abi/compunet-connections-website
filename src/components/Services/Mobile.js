@@ -1,23 +1,23 @@
 import React from "react";
 import { Box, Typography, Grid, Card, CardContent, AppBar, Toolbar } from "@mui/material";
-import { Language, ShoppingCart,  Code, Support,  } from "@mui/icons-material"; 
+import { Language, ShoppingCart,  Code, Support, Cloud } from "@mui/icons-material"; 
 import SecurityRoundedIcon from '@mui/icons-material/SecurityRounded';
-import background from "../images/services/img4.png";
+import background from "../../images/servicesimg/img4.png";
 
 const servicesData = [
-  { icon: <Language fontSize="large" color="black" />, title: "Functional", description: "It helps to verify that all the components work according to the requirements, providing seamless user experiences."},
-  { icon: <ShoppingCart fontSize="large" color="black" />, title: "Test Automation", description: "Speeds up the testing process with the automated scripts & tools, allowing for continuous testing & faster release cycles." },
-  { icon: <SecurityRoundedIcon fontSize="large" color="black" />, title: "Performance", description: "Assesses the software’s responsiveness, scalability & stability under different load conditions. It identifies bottlenecks, ensuring that your system performs optimally even during peak usage." },
-  { icon: <Code fontSize="large" color="black" />, title: "Security", description: "Identifies vulnerabilities & security flaws in application, safeguarding against potential threats & breaches. This ensures data integrity & protects sensitive information." },
-  { icon: <Support fontSize="large" color="black" />, title: "Mobility", description: "Focuses on functionality, performance & usability of mobile applications across a range of devices like iOS, Android & other mobile environments." },
-  
+  { icon: <Language fontSize="large" color="black" />, title: "Strategy & Consultancy", description: "We work closely with our clients to understand their business goals and provide them with the best mobile app strategy that suits their needs."},
+  { icon: <ShoppingCart fontSize="large" color="black" />, title: "Design & User Experience", description: "Our design team creates visually appealing & user-friendly interfaces for the mobile applications as per user requirements given by the client." },
+  { icon: <SecurityRoundedIcon fontSize="large" color="black" />, title: "Development & Integration", description: "Our developers use the latest technology to build high-performance, scalable & secure mobile applications that integrate with existing systems." },
+  { icon: <Code fontSize="large" color="black" />, title: "QA & Testing Services", description: "We ensure the quality of the final product by conducting thorough testing and quality assurance checks.We help you launch error-free products." },
+  { icon: <Support fontSize="large" color="black" />, title: "Maintenance & Support", description: "Our team provides ongoing maintenance & support to ensure that your website remains up-to-date, secure, smooth & performing optimally." },
+  { icon: <Cloud fontSize="large" color="black" />, title: "Service-Focus", description: "Our team has expertise in developing mobile applications for various platforms, including iOS & Android. We use agile methodologies to ensure delivery & seamless integration of  mobile app into our client's business process." },
 ];
 
 const Mobile = () => {
   return (
     <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
     
-      <AppBar position="static" sx={{ background: "linear-gradient(to left, #CC0000, #FFFFFF, #FFFFFF, #599ED4)", minHeight: "100px" }}>
+      <AppBar position="static" sx={{ background: "linear-gradient(to left, #CC0000, #FFFFFF, #FFFFFF, #599ED4)" }}>
         <Toolbar sx={{ justifyContent: "center" }}>
           <Typography
             variant="h4"
@@ -104,4 +104,3 @@ const Mobile = () => {
 };
 
 export default Mobile;
-

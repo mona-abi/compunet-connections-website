@@ -2,7 +2,8 @@ import React from "react";
 import { Box, Typography, Grid, Card, CardContent, AppBar, Toolbar } from "@mui/material";
 import { Language, ShoppingCart,  Code, Support, Cloud } from "@mui/icons-material"; 
 import SecurityRoundedIcon from '@mui/icons-material/SecurityRounded';
-import background from "../images/services/img9.png";
+import background from "../../images/servicesimg/img7.png";  
+
 
 const servicesData = [
   { icon: <Language fontSize="large" color="black" />, title: "Strategy & Consultancy", description: "We work closely with our clients to understand their business goals and provide them with the best mobile app strategy that suits their needs."},
@@ -13,11 +14,11 @@ const servicesData = [
   { icon: <Cloud fontSize="large" color="black" />, title: "Service-Focus", description: "Our team has expertise in developing mobile applications for various platforms, including iOS & Android. We use agile methodologies to ensure delivery & seamless integration of  mobile app into our client's business process." },
 ];
 
-const Staffing = () => {
+const Digital = () => {
   return (
     <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
     
-      <AppBar position="static" sx={{ background: "linear-gradient(to left, #CC0000, #FFFFFF, #FFFFFF, #599ED4)", minHeight: "100px" }}>
+      <AppBar position="static" sx={{ background: "linear-gradient(to left, #CC0000, #FFFFFF, #FFFFFF, #599ED4)" }}>
         <Toolbar sx={{ justifyContent: "center" }}>
           <Typography
             variant="h4"
@@ -103,4 +104,4 @@ const Staffing = () => {
   );
 };
 
-export default Staffing;
+export default Digital;

@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Typography, Grid, Card, CardContent, AppBar, Toolbar } from "@mui/material";
 import { Language, ShoppingCart,  Code, Support, Cloud } from "@mui/icons-material"; 
 import SecurityRoundedIcon from '@mui/icons-material/SecurityRounded';
-import background from "../images/services/img3.png";
+import background from "../../images/servicesimg/img3.png";
 
 const servicesData = [
   { icon: <Language fontSize="large" color="black" />, title: "Web Design & Development", description: "We create custom,user-friendly & responsive websites that accurately reflect your brand & meet your business requirements. We have expertise in WordPress & custom-built websites."},
@@ -17,7 +17,7 @@ const Web = () => {
   return (
     <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       {/* AppBar for "Web & Cloud Application Development" */}
-      <AppBar position="static" sx={{ background: "linear-gradient(to left, #CC0000, #FFFFFF,#FFFFFF, #599ED4)", minHeight: "100px" }}>
+      <AppBar position="static" sx={{ background: "linear-gradient(to left, #CC0000, #FFFFFF,#FFFFFF, #599ED4)" }}>
         <Toolbar sx={{ justifyContent: "center" }}>
           <Typography
             variant="h4"
@@ -94,7 +94,6 @@ const Web = () => {
                 </CardContent>
               </Card>
             </Grid>
-            
           ))}
         </Grid>
       </Box>

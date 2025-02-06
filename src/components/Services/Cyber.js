@@ -1,23 +1,24 @@
 import React from "react";
 import { Box, Typography, Grid, Card, CardContent, AppBar, Toolbar } from "@mui/material";
 import { Language, ShoppingCart,  Code, Support, Cloud } from "@mui/icons-material"; 
-import SecurityRoundedIcon from '@mui/icons-material/SecurityRounded';
-import background from "../images/services/img4.png";
+import SecurityRoundedIcon from "@mui/icons-material/SecurityRounded";
+import background from "../../images/servicesimg/img5.png";  
+
 
 const servicesData = [
-  { icon: <Language fontSize="large" color="black" />, title: "Strategy & Consultancy", description: "We work closely with our clients to understand their business goals and provide them with the best mobile app strategy that suits their needs."},
-  { icon: <ShoppingCart fontSize="large" color="black" />, title: "Design & User Experience", description: "Our design team creates visually appealing & user-friendly interfaces for the mobile applications as per user requirements given by the client." },
-  { icon: <SecurityRoundedIcon fontSize="large" color="black" />, title: "Development & Integration", description: "Our developers use the latest technology to build high-performance, scalable & secure mobile applications that integrate with existing systems." },
-  { icon: <Code fontSize="large" color="black" />, title: "QA & Testing Services", description: "We ensure the quality of the final product by conducting thorough testing and quality assurance checks.We help you launch error-free products." },
-  { icon: <Support fontSize="large" color="black" />, title: "Maintenance & Support", description: "Our team provides ongoing maintenance & support to ensure that your website remains up-to-date, secure, smooth & performing optimally." },
-  { icon: <Cloud fontSize="large" color="black" />, title: "Service-Focus", description: "Our team has expertise in developing mobile applications for various platforms, including iOS & Android. We use agile methodologies to ensure delivery & seamless integration of  mobile app into our client's business process." },
+  { icon: <Language fontSize="large" color="black" />, title: "Network Security", description: "We help secure & protect your network infrastructure by implementing firewalls, intrusion detection/prevention systems & virtual private networks (VPNs)."},
+  { icon: <ShoppingCart fontSize="large" color="black" />, title: "Data Security", description: "We provide encryption, access control & backup & disaster recovery solutions to ensure your sensitive data that remains secure & protected." },
+  { icon: <SecurityRoundedIcon fontSize="large" color="black" />, title: "Application Security", description: "Our team of experts assesses your applications & identifies vulnerabilities, providing remediation services to eliminate these risks." },
+  { icon: <Code fontSize="large" color="black" />, title: "Cloud Security", description: "With companies moving their operations to the cloud, we offer comprehensive cloud security services to secure your cloud environment & ensure data privacy & integrity." },
+  { icon: <Support fontSize="large" color="black" />, title: "Penatration Testing", description: "Our penetration testing services simulate real-world attacks to identify vulnerabilities & provide recommendations for further improvement." },
+  { icon: <Cloud fontSize="large" color="black" />, title: "Threat Intelligence", description: "We monitor & analyze the latest of cyber threats & provide threat intelligence reports to keep you informed & ahead of potential risks." },
 ];
 
-const Mobile = () => {
+const Cyber = () => {
   return (
     <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
     
-      <AppBar position="static" sx={{ background: "linear-gradient(to left, #CC0000, #FFFFFF, #FFFFFF, #599ED4)", minHeight: "100px" }}>
+      <AppBar position="static" sx={{ background: "linear-gradient(to left, #CC0000, #FFFFFF, #FFFFFF, #599ED4)" }}>
         <Toolbar sx={{ justifyContent: "center" }}>
           <Typography
             variant="h4"
@@ -103,4 +104,4 @@ const Mobile = () => {
   );
 };
 
-export default Mobile;
+export default Cyber;

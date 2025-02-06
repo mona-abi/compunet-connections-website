@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./pages/navbar/Navbar";
 import Home from "./components/Home";
-import About from "./components/About";
-import Services from "./components/service/Services";
+import About from "./components/about/About";
+import Services from "./components/Services/Services";
 import Careers from "./components/Careers/JobSearchPage";
 import CaseStudies from "./components/CaseStudies";
 import OurApproach from "./components/OurApproach";
@@ -20,6 +20,10 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+<<<<<<< HEAD
+=======
+        <Route path="/services" element={<Services />} />
+>>>>>>> a2ff3d74bdb85b104f7d8568ac3dd648e6f3b8f5
         <Route path="/careers" element={<Careers />} />
         <Route path="/case-studies" element={<CaseStudies />} />
         <Route path="/our-approach" element={<OurApproach />} />
