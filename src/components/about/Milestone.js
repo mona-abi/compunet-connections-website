@@ -14,10 +14,10 @@ const Milestones = () => {
       <Box
         sx={{
           position: "absolute",
-          top: "65px",
+          top: "50px",
           left: 0,
-          width: "50%",
-          height: "65px",
+          width: "40%",
+          height: "80px",
           background: "linear-gradient(to right, #c90000, #2563eb)",
           clipPath: "polygon(0% 0%, 80% 0%, 100% 100%, 0% 100%)",
           zIndex: 1,
