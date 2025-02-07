@@ -1,5 +1,13 @@
 import React from "react";
-import { Box, Typography, Paper, List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Paper,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+} from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import bg from "../../images/contactImg/contactbg.png";
 import logo from "../../images/contactImg/maskgroup.png";
@@ -8,8 +16,15 @@ import WhyChooseUs from "./WhyChooseUs";
 import ContactUs from "./ContactUs";
 
 const positions = [
-  "0% 0%", "50% 0%", "100% 0%", "0% 50%", "50% 50%", 
-  "100% 50%", "0% 100%", "50% 100%", "100% 100%"
+  "0% 0%",
+  "50% 0%",
+  "100% 0%",
+  "0% 50%",
+  "50% 50%",
+  "100% 50%",
+  "0% 100%",
+  "50% 100%",
+  "100% 100%",
 ];
 
 const Contact = () => {
@@ -19,10 +34,10 @@ const Contact = () => {
       <Box
         sx={{
           display: "flex",
-          flexDirection: { xs: "column", md: "row" }, 
+          flexDirection: { xs: "column", md: "row" },
           alignItems: "center",
           justifyContent: "center",
-          height: { xs: "auto", md: "82vh" }, 
+          height: { xs: "auto", md: "82vh" },
           backgroundImage: `url(${bg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -66,11 +81,16 @@ const Contact = () => {
             backgroundColor: "#D2EBFF",
             borderRadius: "10px",
             boxShadow: "0px 5px 15px rgba(0,0,0,0.3)",
-            mt: { xs: 4, md: 0 }, 
-            ml: { xs: 0, md: 6 }, 
+            mt: { xs: 4, md: 0 },
+            ml: { xs: 0, md: 6 },
           }}
         >
-          <Typography variant="h4" fontWeight="bold" color="#000" fontSize={{ xs: "h6", sm: "h5", md: "h4" }}>
+          <Typography
+            variant="h4"
+            fontWeight="bold"
+            color="#000"
+            fontSize={{ xs: "h6", sm: "h5", md: "h4" }}
+          >
             Take on any Challenge of the <br /> Digital Transformation
           </Typography>
           <List>
