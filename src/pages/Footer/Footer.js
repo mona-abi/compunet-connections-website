@@ -108,14 +108,14 @@ const Footer = () => {
             <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1 }}>
               Contact Us
             </Typography>
-            <Typography variant="body2" sx={{ fontWeight: "bold", color: "red" }}>
+            <Typography variant="body2" sx={{ fontWeight: "bold", color: "#CC0000" }}>
               Corp Office
             </Typography>
             <Typography variant="body2">
               <LocationOn fontSize="small" /> Floor 2, GST Grand, GST Road, Vandalur, Chennai - 600 048.
             </Typography>
 
-            <Typography variant="body2" sx={{ fontWeight: "bold", color: "red", mt: 2 }}>
+            <Typography variant="body2" sx={{ fontWeight: "bold", color: "#CC0000", mt: 2 }}>
               Dev Centre
             </Typography>
             <Typography variant="body2">
@@ -139,7 +139,7 @@ const Footer = () => {
 
       {/* Footer Copyright */}
       <Box sx={{ mt: 3 ,mb:3 }}>
-        <Typography variant="body2" align="center" sx={{ fontSize: "12px", color: "red" }}>
+        <Typography variant="body2" align="center" sx={{ fontSize: "12px", color: "#CC0000" }}>
           © Copyright by Compunet Connections – All rights reserved.
         </Typography>
       </Box>

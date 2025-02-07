@@ -9,7 +9,7 @@ const Meet = () => {
   return (
     <Box sx={{ position: "relative", width: "100%", height: "50vh" }}>
       {/* Header Section */}
-      <AppBar position="absolute" sx={{ backgroundColor: "#E8F5FF", boxShadow: "none",height:"130px" }}>
+      <AppBar position="absolute" sx={{ backgroundColor: "#E8F5FF", boxShadow: "none", height: "130px" }}>
         <Toolbar />
 
         {/* Overlapping Banner */}
@@ -43,11 +43,17 @@ const Meet = () => {
           display: "flex",
           justifyContent: "space-around",
           alignItems: "center",
+          flexWrap: "wrap",  // Ensures logos wrap on smaller screens
           padding: "20px",
         }}
       >
         {[meet1, meet2, meet3, meet4].map((imgSrc, index) => (
-          <Box key={index} sx={{ width: "180px", height: "80px", overflow: "hidden" }}>
+          <Box key={index} sx={{
+            width: { xs: "100%", sm: "48%", md: "22%" }, // Adjust width based on screen size
+            height: "80px",
+            overflow: "hidden",
+            mb: 2, // Add margin for separation
+          }}>
             <img
               src={imgSrc}
               alt={`Meet ${index + 1}`}
