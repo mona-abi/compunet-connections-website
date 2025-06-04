@@ -6,7 +6,7 @@ import DesignApproach from "./Design";
 const Home = () => {
   return (
     <Box>
-      <DesignApproach />
+      {/* <DesignApproach /> */}
     </Box>
   )
 };

@@ -9,10 +9,11 @@ import {
   Typography,
   Card,
   CardContent,
+  Grid,
   useMediaQuery,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import bg from "../../images/careersimg/bg.png";
+import bg from "../../images/careersimg/group.png";
 import chat from "../../images/contactImg/LogoWhite .png";
 
 import SearchIcon from "@mui/icons-material/Search";
@@ -55,12 +56,14 @@ const JobSearchPage = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+     
+
         fontFamily: "Inter",
         padding: isMobile ? 2 : 0,
       }}
     >
-      <Container sx={{ textAlign: "center", color: "#FFFFFF" }}>
-        <Typography variant="h2" gutterBottom sx={{ fontWeight: "bold", fontSize: isMobile ? "2rem" : "3rem" }}>
+      <Container sx={{ textAlign: "center", color: "#FFF" }}>
+        <Typography variant="h2" gutterBottom sx={{ fontWeight: "bold", fontSize: isMobile ? "2rem" : "3rem" ,}}>
           Find Your Dream Job Today!
         </Typography>
         <Typography sx={{ marginBottom: 3, fontSize: "15px", marginTop: "-15px" }}>
@@ -166,91 +169,89 @@ const JobSearchPage = () => {
       {/* Job Search Results Below the Background Image */}
 
       {showResults && (
-        <Box
-          sx={{
-            background:
-              "linear-gradient(to left, #CC0000, #FFFFFF, #FFFFFF, #599ED4)",
-            width: "100%",
-            height: "70px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            mb: 2,
-          }}
-        >
-          <Typography
-            variant="h4"
-            color="error"
+  <Box
+    sx={{
+      background:
+        "linear-gradient(to left, #CC0000, #FFFFFF, #FFFFFF, #599ED4)",
+      width: "100%",
+      height: "70px",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      mb: 2,
+      px: 2,
+    }}
+  >
+    <Typography
+      variant="h5"
+      color="error"
+      sx={{
+        fontWeight: "bold",
+        background: "linear-gradient(to right, #CC0000, #599ED4)",
+        WebkitBackgroundClip: "text",
+        color: "transparent",
+        textAlign: "center",
+        fontFamily: "Inter",
+      }}
+    >
+      Career Openings ({jobResults.length})
+    </Typography>
+  </Box>
+)}
+
+{showResults && (
+  <Container sx={{ mt: 2, width: "100%" }}>
+    <Grid container spacing={2} justifyContent="center">
+      {jobResults.map((job, index) => (
+        <Grid item xs={12} sm={10} md={8} key={index}>
+          <Card
             sx={{
-              fontWeight: "bold",
-              background: "linear-gradient(to right, #CC0000, #599ED4)",
-              WebkitBackgroundClip: "text",
-              color: "transparent",
-              mb: 2,
-              mt: 2,
-              fontFamily: "Inter",
+              border: "2px solid #008FFF",
+              boxShadow: 2,
+              borderRadius: "10px",
+              transition: "0.3s",
+              "&:hover": { boxShadow: 5 },
             }}
           >
-            Career Openings ({jobResults.length})
-          </Typography>
-        </Box>
-      )}
-
-      {showResults && (
-        <Container sx={{ mt: 4, height: "450px" }}>
-          {jobResults.map((job, index) => (
-            <Card
-              key={index}
+            <CardContent
               sx={{
-                mb: 2,
-                border: "2px solid #008FFF",
-                boxShadow: 2,
-                borderRadius: "10px",
-               
-                height: "100px",
-                transition: "0.3s",
-                "&:hover": { boxShadow: 5 },
+                display: "flex",
+                flexDirection: { xs: "column", sm: "row" },
+                justifyContent: "space-between",
+                alignItems: "center",
+                textAlign: "center",
               }}
             >
-              <CardContent
-                sx={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}
-              >
-                <Box sx={{ flex: 1, textAlign: "left" }}>
-                  <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-                    {job.title}
-                  </Typography>
-                  <Typography variant="subtitle1" color="text.secondary">
-                    {job.location}
-                  </Typography>
-                </Box>
-                <Box sx={{ flex: 1, textAlign: "center" }}>
-                  <Typography variant="subtitle2">
-                    Posted on {job.datePosted}
-                  </Typography>
-                </Box>
-                <Box sx={{ flex: 1, textAlign: "right" }}>
-                  <Button
-                    variant="contained"
-                    color="error"
-                    sx={{
-                      mt: 1,
-                      textTransform: "none !important",
-                      fontSize: "15px",
-                    }}
-                    onClick={() => handleApply(job.id)}
+              <Box sx={{ flex: 1, textAlign: "left" }}>
+                <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                  {job.title}
+                </Typography>
+                <Typography variant="subtitle1" color="text.secondary">
+                  {job.location}
+                </Typography>
+              </Box>
+              <Box sx={{ flex: 1, textAlign: "center", mt: { xs: 1, sm: 0 } }}>
+                <Typography variant="subtitle2">
+                  Posted on {job.datePosted}
+                </Typography>
+              </Box>
+              <Box sx={{ flex: 1, textAlign: "right", mt: { xs: 1, sm: 0 } }}>
+                <Button
+                  variant="contained"
+                  color="error"
+                  sx={{ textTransform: "none", fontSize: "15px" }}
+                  onClick={() => handleApply(job.id)}
+                >
+                  Apply Now
+                </Button>
+              </Box>
+            </CardContent>
+          </Card>
+        </Grid>
+      ))}
+    </Grid>
+  </Container>
 
-                  >
-                    Apply Now
-                  </Button>
-                </Box>
-              </CardContent>
-            </Card>
-          ))}
-        </Container>
       )}
       <Box
         sx={{

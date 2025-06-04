@@ -67,7 +67,7 @@ const JobDetailsPage = () => {
             <Grid item xs={12} md={9}>
               <Grid container spacing={2}>
                 {[
-                  { icon: dollor, title: "Salary", value: "₹100000 - ₹150000 /year" },
+                  { icon: dollor, title: "Salary", value: "₹100000-₹150000 /year" },
                   { icon: <LocationOn fontSize="large" />, title: "Location", value: "Chennai" },
                   { icon: <WorkIcon fontSize="large" />, title: "Job Type", value: "Full-Time" },
                   { icon: <CalendarTodayIcon fontSize="large" />, title: "Date Posted", value: "9 Feb 2024" },

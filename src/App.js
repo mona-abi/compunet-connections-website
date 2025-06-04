@@ -14,6 +14,7 @@ import BlogsType from "./components/blogs/BlogsType";
 import JobDetailsPage from "./components/Careers/JobDetailsPage"; 
 import ApplyFormPage from "./components/Careers/ApplyFormPage";
 import ApplicationSuccess from "./components/Careers/ApplicationSuccess";
+import Book from "./components/Book/Book";
 const App = () => {
   return (
     <Router>
@@ -31,6 +32,7 @@ const App = () => {
         <Route path="/job-details/1" element={<JobDetailsPage />} /> 
         <Route path="/apply" element={<ApplyFormPage />} /> 
         <Route path="/application-success" element={<ApplicationSuccess  />} />
+        <Route path="/Book" element={<Book />} /> 
       </Routes>
       <Footer />
     </Router>

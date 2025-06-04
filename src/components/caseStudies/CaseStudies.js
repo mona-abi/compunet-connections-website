@@ -1,6 +1,5 @@
 import React from "react";
-
-import banner from "../../images/casestudiesimg/Banner.png";
+import banner from "../../images/casestudiesimg/cs.png";
 import {
   Box,
   Typography,
@@ -18,8 +17,9 @@ import image1 from "../../images/casestudiesimg/ba2.png";
 import image2 from "../../images/casestudiesimg/ba3.png";
 import image3 from "../../images/casestudiesimg/ba4.png";
 import image4 from "../../images/casestudiesimg/ba5.png";
-import image5 from "../../images/casestudiesimg/ba6.png";
+import image5 from "../../images/casestudiesimg/b6.png";
 import image6 from "../../images/casestudiesimg/ba7.png";
+
 const caseStudies = [
   {
     title: "Tamil Nadu State Transport Authority",
@@ -45,16 +45,15 @@ const caseStudies = [
   {
     title: "Retrex",
     description:
-      "Award winning Enterprise Mobile Application to manage half a million of customers & 3,000 Field Executives.",
+      "Award-winning Enterprise Mobile Application to manage half a million customers & 3,000 Field Executives.",
     cardBackgroundColor: "#E7DAED",
     imageBackgroundColor: "#CEC0FF",
-
     image: image3,
   },
   {
     title: "Hinduja Leyland Finance",
     description:
-      "A leading non-banking financial company in India, offering a comprehensive financial solutions for commercial vehicles",
+      "A leading non-banking financial company in India, offering a comprehensive financial solution for commercial vehicles.",
     cardBackgroundColor: "#CCE8FF",
     imageBackgroundColor: "#8ECBFF",
     image: image4,
@@ -62,14 +61,14 @@ const caseStudies = [
   {
     title: "Tamil Nadu State AIDS Control Society (TANSACS)",
     description:
-      "A Government of Tamil Nadu Department manages public transit, regulates entities & facilitates state projects.",
-    cardBackgroundColor: "#FFD2D2",
-    imageBackgroundColor: "#FFF",
+      "A Government of Tamil Nadu Department managing public transit, regulating entities & facilitating state projects.",
+    cardBackgroundColor: "#E2F4FF",
+    imageBackgroundColor: "#FFD2D2",
+
     image: image5,
   },
   {
     title: "National Health Mission(NHM)",
-
     description:
       "Aims to provide accessible, affordable & quality healthcare to all citizens prioritizing rural areas.",
     cardBackgroundColor: "#FDFFE3",
@@ -77,114 +76,145 @@ const caseStudies = [
     image: image6,
   },
 ];
+
 const CaseStudies = () => {
   return (
     <>
-      <div>
       <Box
         sx={{
           position: "relative",
           textAlign: "center",
           color: "white",
-          height: { xs: "50vh", md: "100vh" },
+          height: "90vh",
           backgroundImage: `url(${banner})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "20px",
         }}
       >
-        <Paper
+        {/* <Paper
           sx={{
             position: "absolute",
-            right: { xs: "5%", md: "10%" },
+            right: { xs: "5%", md: "10%" }, // Adjust position for responsiveness
             top: "50%",
-            transform: "translateY(-50%)",
+            transform: "translateY(-50%)", // Centers vertically
             width: { xs: "90%", sm: "60%", md: "315px" },
-            height: "auto",
+            height: "100px",
             padding: { xs: 2, md: 4 },
             backgroundColor: "black",
             color: "white",
             borderRadius: "10px",
             boxShadow: "0px 5px 15px rgba(0,0,0,0.3)",
-            textAlign: "center",
+            textAlign: "left",
           }}
         >
-          <Typography variant="h5" fontWeight="bold">
+          <Typography
+            variant="h4"
+            fontWeight="bold"
+            fontSize={{ xs: "h6", sm: "h5", md: "h6" }}
+          >
             Case Studies
           </Typography>
-          <Typography variant="subtitle1" sx={{ mt: 2 }}>
-            Driving Digital Transformation for our clients with scalable IT Solutions.
+          <Typography variant="subtitle1" sx={{ mt: 2, color: "white" }}>
+            Driving Digital Transformation for our clients with scalable IT
+            Solutions.
           </Typography>
-        </Paper>
+        </Paper> */}
       </Box>
 
-
-      </div>
-
-      <div>
-        <Container>
-          <Box sx={{ padding: 4 }}>
-            <Typography
-              variant="h6"
-              align="center"
-              gutterBottom
-              sx={{ fontWeight: "bold" }}
-            >
-              Our Case Studies
-            </Typography>
-            <Grid container spacing={4}>
-              {caseStudies.map((study, index) => (
-                <Grid item xs={12} md={4} key={index}>
-                  <Card
-                    sx={{
-                      backgroundColor: study.cardBackgroundColor,
-                      height: "100%", // Ensures all cards have equal height
-                      display: "flex",
-                      flexDirection: "column",
-                    }}
-                  >
-                    <CardContent sx={{ padding: 0, flexGrow: 1 }}>
-                      <Box
-                        display="flex"
-                        justifyContent="center"
-                        alignItems="center"
-                        sx={{
-                          backgroundColor: study.imageBackgroundColor,
-                          borderRadius: "8px",
-                        }}
-                      >
-                        <img
-                          src={study.image}
-                          alt={study.title}
-                          style={{ height: 240 }}
-                        />
-                      </Box>
-                      <Box sx={{ padding: "20px", flexGrow: 1 }}>
-                        <Typography variant="h6" gutterBottom fontWeight="bold">
-                          {study.title}
-                        </Typography>
-                        <Box sx={{ minHeight: "80px" }}>
-                          <Typography>{study.description}</Typography>
-                        </Box>
-                      </Box>
-                    </CardContent>
-
-                    <CardActions sx={{ marginTop: "auto" }}>
-                      <Button
-                        variant="contained"
-                        color="error"
-                        fullWidth
-                        sx={{ paddingTop: "10px" }}
-                      >
-                        View
-                      </Button>
-                    </CardActions>
-                  </Card>
-                </Grid>
-              ))}
-            </Grid>
+      <Container>
+        <Box sx={{ padding: 4 }}>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              
+            }}
+          >
+            <Box
+              sx={{
+                width: "40px",
+                height: "3px",
+                background: "linear-gradient(to right, #599ed4, #cc0000)",
+              }}
+            />
           </Box>
-        </Container>
-      </div>
+
+          <Typography
+            variant="h6"
+            align="center"
+            gutterBottom
+            sx={{ fontWeight: "bold" }}
+          >
+            Our Case Studies
+          </Typography>
+          
+          <Grid container spacing={4}>
+            {caseStudies.map((study, index) => (
+              <Grid item xs={12} sm={6} md={4} key={index}>
+                <Card
+                  sx={{
+                    backgroundColor: study.cardBackgroundColor,
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+                  }}
+                >
+                  <CardContent sx={{ padding: 2, flexGrow: 1 }}>
+                    <Box
+                      display="flex"
+                      justifyContent="center"
+                      alignItems="center"
+                      sx={{
+                        backgroundColor:
+                          study.imageBackgroundColor || "transparent",
+                        borderRadius: "8px",
+                        padding: 2,
+                        height: 180,
+                      }}
+                    >
+                      <img
+                        src={study.image}
+                        alt={study.title}
+                        style={{
+                          maxHeight: "120%",
+                          maxWidth: "120%",
+                          objectFit: "contain",
+                        }}
+                      />
+                    </Box>
+                    <Box sx={{ marginTop: 2 }}>
+                      <Typography variant="h6" fontWeight="bold">
+                        {study.title}
+                      </Typography>
+                      <Typography sx={{ minHeight: "80px", fontSize: "14px" }}>
+                        {study.description}
+                      </Typography>
+                    </Box>
+                  </CardContent>
+                  <CardActions sx={{ marginTop: "auto" }}>
+                    <Button
+                      variant="contained"
+                      color="error"
+                      fullWidth
+                      sx={{ padding: "10px" }}
+                    >
+                      View
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+      </Container>
+
+      {/* Chat Button */}
       <Box sx={{ position: "fixed", bottom: 16, right: 16 }}>
         <Button
           variant="contained"
@@ -198,6 +228,7 @@ const CaseStudies = () => {
             display: "flex",
             alignItems: "center",
             gap: "8px",
+            boxShadow: "0px 4px 10px rgba(0,0,0,0.2)",
           }}
         >
           <img src={chat} alt="Chat" style={{ width: 24, height: 24 }} />

@@ -15,11 +15,9 @@ import {
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import searchImage from "../../images/navbarimg/searchImage.png";
-
 import CloseIcon from "@mui/icons-material/Close";
-import "./Navbar.css";
-
 import logo from "../../images/navbarimg/Logo 1.png";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -28,8 +26,6 @@ const Navbar = () => {
 
   const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
   const toggleSearch = () => setSearchOpen(!searchOpen);
-
-  // Detect if the screen size is mobile
   const isMobile = useMediaQuery("(max-width: 900px)");
 
   const navItems = [
@@ -45,27 +41,20 @@ const Navbar = () => {
 
   return (
     <div>
-      <AppBar
-        position="static"
-        className="navbar"
-        sx={{ background: "#FFFFFF" }}
-      >
+      <AppBar position="static" className="navbar" sx={{ background: "#FFFFFF" }}>
         <Toolbar sx={{ paddingLeft: "5px !important", paddingRight: "10px" }}>
           {/* Logo */}
-          <Link to="/home">
+          <Link to="/">
             <img src={logo} alt="Compunet Logo" className="logo" />
           </Link>
 
           <Box sx={{ flexGrow: 1 }} />
+
+          {/* Search Bar */}
           {searchOpen ? (
             <Box className="search-box">
-              <TextField
-                variant="outlined"
-                size="small"
-                placeholder="Search..."
-                className="search-input"
-              />
-              <IconButton className="close-icon" sx={{}} onClick={toggleSearch} >
+              <TextField variant="outlined" size="small" placeholder="Search..." className="search-input" />
+              <IconButton className="close-icon" onClick={toggleSearch}>
                 <CloseIcon sx={{ fontSize: 15 }} />
               </IconButton>
             </Box>
@@ -80,7 +69,7 @@ const Navbar = () => {
             />
           )}
 
-          {/* Navbar Links - Show only on desktop */}
+          {/* Desktop Navigation */}
           {!isMobile && (
             <Box className="nav-links">
               {navItems.map((item) => (
@@ -88,34 +77,34 @@ const Navbar = () => {
                   key={item.label}
                   component={Link}
                   to={item.path}
-                  className={`nav-button ${
-                    activeTab === item.label ? "active" : ""
-                  }`}
+                  className={`nav-button ${activeTab === item.label ? "active" : ""}`}
                   onClick={() => setActiveTab(item.label)}
                 >
                   {item.label}
                 </Button>
               ))}
+              {/* Fixed "Book a Call" button */}
+              <Button
+                component={Link}
+                to="/Book"
+                className={`book-call-btn ${activeTab === "Book a Call" ? "active" : ""}`}
+                onClick={() => setActiveTab("Book a Call")}
+              >
+                Book a Call
+              </Button>
             </Box>
           )}
 
-          {/* "Book a Call" Button */}
-          {!isMobile && <Button className="book-call-btn">Book a call</Button>}
-
-          {/* Hamburger Menu for Mobile */}
+          {/* Mobile Hamburger Menu */}
           {isMobile && (
-            <IconButton
-              edge="end"
-              className="menu-icon"
-              onClick={handleDrawerToggle}
-            >
+            <IconButton edge="end" className="menu-icon" onClick={handleDrawerToggle}>
               <MenuIcon />
             </IconButton>
           )}
         </Toolbar>
       </AppBar>
 
-      {/* Mobile Sidebar - Show only on mobile */}
+      {/* Mobile Drawer Menu */}
       {isMobile && (
         <Drawer anchor="right" open={mobileOpen} onClose={handleDrawerToggle}>
           <List>
@@ -133,8 +122,19 @@ const Navbar = () => {
                 <ListItemText primary={item.label} />
               </ListItem>
             ))}
+            {/* Fixed "Book a Call" button inside mobile menu */}
             <ListItem>
-              <Button className="book-call-btn">Book a call</Button>
+              <Button
+                component={Link}
+                to="/Book"
+                className="book-call-btn"
+                onClick={() => {
+                  setActiveTab("Book a Call");
+                  handleDrawerToggle();
+                }}
+              >
+                Book a Call
+              </Button>
             </ListItem>
           </List>
         </Drawer>

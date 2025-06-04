@@ -69,7 +69,7 @@ const AboutUs = () => {
 
           {/* Right Side Image (inside the content box) */}
           <Box sx={{ 
-            mt: { xs: 4, md: 0 }, // Add margin top on small screens
+            mt: { xs: 4, md: 0 }, 
             width: "100%", 
             maxWidth: "500px", // Limit the image size
             height: "auto", 
