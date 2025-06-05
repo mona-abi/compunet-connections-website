@@ -46,7 +46,7 @@ const Navbar = () => {
   return (
     <div>
       <AppBar
-        position="static"
+        position="fixed"
         className="navbar"
         sx={{ background: "#FFFFFF" }}
       >

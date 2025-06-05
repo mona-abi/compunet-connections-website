@@ -13,9 +13,10 @@ import Footer from "./pages/Footer/Footer";
 import BlogsType from "./components/blogs/BlogsType";
 import JobDetailsPage from "./components/Careers/JobDetailsPage";  // Import JobDetailsPage
 
+export const baseUrl="/compunet";
 const App = () => {
   return (
-    <Router>
+    <Router basename={baseUrl}>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -27,7 +28,7 @@ const App = () => {
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blog/:id" element={<BlogsType />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/job-details/1" element={<JobDetailsPage />} /> {/* Fix: Add this route */}
+        <Route path="/job-details/1" element={<JobDetailsPage />} /> 
       </Routes>
       <Footer />
     </Router>
