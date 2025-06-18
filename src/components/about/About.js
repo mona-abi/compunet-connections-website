@@ -5,7 +5,6 @@ import Hero from "../../images/aboutimg/Hero.png";
 import GetToKnow from "./GetToKnow";
 import LeadershipTeam from "./LeaderShipTeam";
 import Milestone from "./Milestone";
-import Meet from "./Meet";
 import ClientPartners from "./ClientPartners";
 import AboutSection from "./AboutSection";
 
@@ -58,18 +57,18 @@ const AboutUs = () => {
             <Typography variant="h4" sx={{ fontWeight: "bold", color: "#c90000", textAlign: "center" }}>
               ABOUT <span style={{ color: "#2563eb" }}>US</span>
             </Typography>
-            <Typography  sx={{ fontSize: "20px", mt: 3, textAlign: "justify", color: "#555", lineHeight: "1.6",  }}>
-              A quick spotlight on everything we have digitally transformed & how we do it. Small-Sized Businesses & 
-              their un-met technology needs can only be satisfied with flexible experiments & personal attention, not 
+            <Typography  sx={{ fontSize: "20px", mt: 3, textAlign: "center", color: "#555", lineHeight: "1.6",  }}>
+              A quick spotlight on everything we have digitally transformed & how we do it.Small-Sized Businesses & 
+              their un-met technology needs can only be satisfied with flexible experiments & personal attention,not 
               stringent processes & standard operating protocols. 
             
-              We want to ensure to bring technology solutions to your business & projects on your terms & timelines, not ours!
+              We want to ensure to bring technology solutions to your business & projects on your terms & timelines,not ours!
             </Typography>
           </Box>
 
           {/* Right Side Image (inside the content box) */}
           <Box sx={{ 
-            mt: { xs: 4, md: 0 }, // Add margin top on small screens
+            mt: { xs: 4, md: 0 }, 
             width: "100%", 
             maxWidth: "500px", // Limit the image size
             height: "auto", 
@@ -96,7 +95,7 @@ const AboutUs = () => {
         <GetToKnow />
         <LeadershipTeam />
         <Milestone />
-        <Meet />
+        
         <ClientPartners />
       </Box>
     </Box>

@@ -2,12 +2,13 @@ import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 import PlayCircleIcon from "@mui/icons-material/PlayCircleOutline";
 import About from "../../images/aboutimg/About.png"; 
-
+import lead from '../../images/homeimg/lead.mp4';
 const AboutSection = () => {
   return (
     <Box
       sx={{
         display: "flex",
+        flexDirection:'row',
         alignItems: "center",
         justifyContent: "space-between",
         backgroundColor: "#EAF4FF", // Light blue background
@@ -58,31 +59,21 @@ const AboutSection = () => {
           maxWidth: "50%",
         }}
       >
-        <img
-          src={About}
-          alt="Team Working"
-          style={{
-            width: "100%",
-            maxWidth: "450px",
-            borderRadius: "12px",
-            objectFit: "cover",
-          }}
-        />
-        {/* Play Button Overlay */}
-        <Button
-          sx={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            backgroundColor: "rgba(255, 255, 255, 0.8)",
-            borderRadius: "50%",
-            padding: "10px",
-            minWidth: "unset",
-          }}
-        >
-          <PlayCircleIcon sx={{ fontSize: 50, color: "red" }} />
-        </Button>
+        <video
+  src={lead}
+  autoPlay
+  muted
+  loop
+  playsInline
+  style={{
+    width: '100%',
+    maxWidth: '28.125rem', // 450px = 28.125rem
+    borderRadius: '0.75rem', // 12px = 0.75rem
+    objectFit: 'cover',
+    filter: 'blur(1.2px)',
+    display: 'block',
+  }}
+/>
       </Box>
     </Box>
   );

@@ -1,6 +1,6 @@
 import { Box, Typography, Card, CardMedia } from '@mui/material';
 import React from 'react';
-import office from '../../images/aboutimg/About.png';
+import lead from '../../images/homeimg/lead.mp4';
 import gradient from '../../images/homeimg/gradient.png';
 
 const LeadingCompany = () => {
@@ -11,7 +11,7 @@ const LeadingCompany = () => {
     maxWidth: '100%',
     height: 950,
     overflowX: 'hidden',
-    overflowY: 'hidden',   // ADD THIS to disable vertical scroll
+    overflowY: 'hidden',   
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -24,13 +24,13 @@ const LeadingCompany = () => {
       <Box
         sx={{
           display: 'flex',
-          flexDirection: { xs: 'column', md: 'row' },
+          flexDirection:  'row' ,
           alignItems: 'center',
           justifyContent: 'space-evenly',
           gap: 8,
           maxWidth: '100%',
           width: '100%',
-          flexWrap: 'wrap',
+          //flexWrap: 'wrap',
         }}
       >
 <Box
@@ -74,23 +74,27 @@ const LeadingCompany = () => {
         <Card
   sx={{
     width: '100%',
-    maxWidth: 630,
-    aspectRatio: '601 / 460',
-    borderRadius:4,
+    maxWidth: "40rem",
+    borderRadius: 4,
+    overflow: 'hidden', // ensures border radius is applied to video
   }}
 >
-  <CardMedia
-    component="img"
-    image={office}
-    alt="Office Environment"
-    sx={{
-      borderRadius:4,
+  <video
+    src={lead}
+    autoPlay
+    muted
+    loop
+    playsInline
+    style={{
       width: '100%',
-      height: '100%',
+      height: '75%',
       objectFit: 'cover',
+      display: 'block',
+      filter: 'blur(1.2px)'
     }}
   />
 </Card>
+
 
 </Box>
 

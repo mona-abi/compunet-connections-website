@@ -4,7 +4,10 @@ import laptop from '../../images/homeimg/letstart.png';
 import blue from '../../images/homeimg/blue.png';
 import red from '../../images/homeimg/red.png';
 import get from '../../images/homeimg/getstart1.jpeg';
+import { useNavigate } from 'react-router-dom';
+
 const GetStarted = () => {
+  const navigate=useNavigate();
   const card = [
     { value: '20+', label: 'GLORIOUS YEARS' },
     { value: '160+', label: 'COMPLETED PROJECTS' },
@@ -62,6 +65,10 @@ const GetStarted = () => {
         '&:hover': {
           backgroundColor: '#e85b5b',
         },
+      }}
+      onClick={() => {
+        navigate("/contact");
+        window.scrollTo(0,0);
       }}
     >
       Let's get started!

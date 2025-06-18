@@ -13,12 +13,11 @@ import retrax from '../../images/homeimg/retrax.png';
 import raqamyah from '../../images/homeimg/logo.webp';
 import cms from '../../images/homeimg/cms.png';
 import australia from '../../images/homeimg/australia.png';
-
-
-
-
+import { useNavigate } from 'react-router-dom';
 const CaseStudy = () => {
-    const read='Read more case studies '
+    const read='Read more case studies ';
+    const navigate=useNavigate();
+
   return (
     <Box
       sx={{
@@ -42,8 +41,14 @@ const CaseStudy = () => {
           Case studies
         </Typography>
       </Box>
-      <Typography
+      <Typography  
+      onClick={() => {
+        navigate("/case-studies");
+        window.scrollTo(0,0);
+      }}
+
   sx={{
+    cursor: 'pointer',
     color: '#CC0000',
     mt: 1,
     display:'flex',
@@ -103,6 +108,9 @@ const CaseStudy = () => {
     <Button
       fullWidth
       variant="contained"
+      onClick={()=>{
+        navigate("/retrax")
+         window.scrollTo(0, 0); }}
       sx={{
         backgroundColor: '#CC0000',
         '&:hover': { backgroundColor: '#a80000' },
@@ -167,6 +175,10 @@ const CaseStudy = () => {
     <Button
       fullWidth
       variant="contained"
+      onClick={()=>{
+        navigate("/raqamyah")
+        window.scrollTo(0,0)
+      }}
       sx={{
         backgroundColor: '#CC0000',
         '&:hover': { backgroundColor: '#a80000' },
@@ -230,6 +242,10 @@ const CaseStudy = () => {
     <Button
       fullWidth
       variant="contained"
+      onClick={()=>{
+        navigate("/cms");
+        window.scrollTo(0,0);
+      }}
       sx={{
         backgroundColor: '#CC0000',
         '&:hover': { backgroundColor: '#a80000' },

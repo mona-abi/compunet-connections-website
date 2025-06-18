@@ -10,7 +10,7 @@ import khadi from '../../images/homeimg/khadi.png';
 import hlf from '../../images/homeimg/hlf.png';
 
 const logos = [
-  { src: cms, alt: "Sales", width: 255 },
+  { src: cms, alt: "Sales", width: 225 },
   { src: raqamyah, alt: "Venba", width: 175 },
   { src: retrax, alt: "RetrAx", width: 195 },
   { src: tnaids, alt: "TNAIDS", width: 105 },

@@ -9,9 +9,11 @@ import {
   Typography,
   Card,
   CardContent,
+  Grid,
+  useMediaQuery,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import bg from "../../images/careersimg/bg.png";
+import bg from "../../images/homeimg/letstart.png";
 import chat from "../../images/contactImg/LogoWhite .png";
 
 import SearchIcon from "@mui/icons-material/Search";
@@ -21,6 +23,11 @@ const JobSearchPage = () => {
   const [category, setCategory] = useState("");
   const [jobTitle, setJobTitle] = useState("");
   const [showResults, setShowResults] = useState(false);
+
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
+ 
+
   const [jobResults, setJobResults] = useState([
     {
       id: 1,
@@ -40,226 +47,211 @@ const JobSearchPage = () => {
 
   return (
     <>
-      <Box
-        sx={{
-          backgroundImage: `url(${bg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          minHeight: "100vh",
-          display: "flex",
-          alignItems: "center",
-          fontfamily: "Inter",
-          justifyContent: "center",
-        }}
-      >
-        <Container sx={{ textAlign: "center", color: "#FFFFFF" }}>
-          <Typography variant="h2" gutterBottom sx={{ fontWeight: "bold" }}>
-            Find Your Dream Job Today!
-          </Typography>
-          <Typography
-            sx={{ marginBottom: 3, fontSize: "15px", marginTop: "-15px" }}
-          >
-            Connecting Talent with Opportunity: Your Gateway to Career Success
-          </Typography>
+ <Box
+      sx={{
+        backgroundImage: `url(${bg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+     
 
-          {/* Job Search Form */}
+        fontFamily: "Inter",
+        padding: isMobile ? 2 : 0,
+      }}
+    >
+      <Container sx={{ textAlign: "center", color: "#FFF" }}>
+        <Typography variant="h2" gutterBottom sx={{ fontWeight: "bold", fontSize: isMobile ? "2rem" : "3rem" ,}}>
+          Find Your Dream Job Today!
+        </Typography>
+        <Typography sx={{ marginBottom: 3, fontSize: "15px", marginTop: "-15px" }}>
+          Connecting Talent with Opportunity: Your Gateway to Career Success
+        </Typography>
 
-          <Box
+        {/* Job Search Form */}
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: isMobile ? "column" : "row",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "white",
+            borderRadius: 2,
+            boxShadow: 3,
+            width: isMobile ? "100%" : "747px",
+            border: "2px solid #CC0000",
+            margin: "auto",
+            padding: isMobile ? "10px" : "0",
+            height: isMobile ? "auto" : "65px",
+          }}
+        >
+          <Select
+            displayEmpty
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+            variant="standard"
+            disableUnderline
             sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              background: "white",
-              borderRadius: 2,
-              boxShadow: 3,
-              width: "730px",
-              border: "2px solid #CC0000",
-              margin: "auto",
+              minWidth: isMobile ? "100%" : 180,
+              marginBottom: isMobile ? 2 : 0,
+              "& .MuiOutlinedInput-notchedOutline": { border: "none" },
+              "&:before, &:after": { display: "none" },
             }}
           >
-            <Select
-              displayEmpty
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
-              variant="standard"
-              disableUnderline
-              sx={{
-                minWidth: 180,
-                "& .MuiOutlinedInput-notchedOutline": { border: "none" },
-                "&:before, &:after": { display: "none" }, // Removes default underline
-              }}
-            >
-              <MenuItem value="">Select Location</MenuItem>
-              <MenuItem value="new-york">New York</MenuItem>
-              <MenuItem value="san-francisco">San Francisco</MenuItem>
-              <MenuItem value="remote">Remote</MenuItem>
-            </Select>
+            <MenuItem value="">Select Location</MenuItem>
+            <MenuItem value="new-york">Chennai</MenuItem>
+            <MenuItem value="san-francisco">Krishnagiri</MenuItem>
 
-            {/* Divider Line */}
-            <div
-              style={{
-                width: "1px",
-                height: "30px",
-                background: "black",
-                margin: "0 10px",
-              }}
-            ></div>
+          </Select>
 
-            <TextField
-              placeholder="Job Title or Company"
-              value={jobTitle}
-              onChange={(e) => setJobTitle(e.target.value)}
-              variant="standard"
-              InputProps={{
-                disableUnderline: true,
-              }}
-              sx={{
-                minWidth: 200,
-                "& .MuiInputBase-root": {
-                  border: "none",
-                },
-              }}
-            />
+          {!isMobile && <div style={{ width: "1px", height: "30px", background: "black", margin: "0 10px" }}></div>}
 
-            {/* Divider Line */}
-            <div
-              style={{
-                width: "1px",
-                height: "30px",
-                background: "black",
-                margin: "0 10px",
-              }}
-            ></div>
+          <TextField
+            placeholder="Job Title or Company"
+            value={jobTitle}
+            onChange={(e) => setJobTitle(e.target.value)}
+            variant="standard"
+            InputProps={{ disableUnderline: true }}
+            sx={{
+              minWidth: isMobile ? "100%" : 200,
+              marginBottom: isMobile ? 2 : 0,
+              "& .MuiInputBase-root": { border: "none" },
+            }}
+          />
 
-            <Select
-              displayEmpty
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-              variant="standard"
-              disableUnderline
-              sx={{
-                minWidth: 180,
-                "& .MuiOutlinedInput-notchedOutline": { border: "none" },
-                "&:before, &:after": { display: "none" },
-              }}
-            >
-              <MenuItem value="">Select Category</MenuItem>
-              <MenuItem value="engineering">Engineering</MenuItem>
-              <MenuItem value="design">Design</MenuItem>
-              <MenuItem value="marketing">Marketing</MenuItem>
-            </Select>
+          {!isMobile && <div style={{ width: "1px", height: "30px", background: "black", margin: "0 10px" }}></div>}
 
-            <Button
-              variant="contained"
-              sx={{
-                backgroundColor: "#CC0000",
-                color: "white",
-                fontSize: "15px",
-                textTransform: "none !important",
-                width: "100%",
-                borderRadius: "0",
-                display: "flex",
-                alignItems: "center",
+          <Select
+            displayEmpty
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            variant="standard"
+            disableUnderline
+            sx={{
+              minWidth: isMobile ? "100%" : 180,
+              marginBottom: isMobile ? 2 : 0,
+              "& .MuiOutlinedInput-notchedOutline": { border: "none" },
+              "&:before, &:after": { display: "none" },
+            }}
+          >
+            <MenuItem value="">Select Category</MenuItem>
+            <MenuItem value="engineering">Engineering</MenuItem>
+            <MenuItem value="design">Design</MenuItem>
+            <MenuItem value="marketing">Marketing</MenuItem>
+          </Select>
 
-                justifyContent: "center",
-                gap: "8px",
-              }}
-              onClick={handleSearch}
-            >
-              <SearchIcon />
-              Search Job
-            </Button>
-          </Box>
-        </Container>
-      </Box>
+          <Button
+            variant="contained"
+            sx={{
+              backgroundColor: "#CC0000",
+              color: "white",
+              fontSize: "15px",
+              textTransform: "none",
+              width: isMobile ? "100%" : "auto",
+              borderRadius: isMobile ? "5px" : "0 5px 5px 0",
+              display: "flex",
+              alignItems: "center",
+              height: isMobile ? "45px" : "65px",
+              justifyContent: "center",
+              gap: "8px",
+            }}
+            onClick={handleSearch}
+          >
+            <SearchIcon />
+            Search Job
+          </Button>
+        </Box>
+      </Container>
+    </Box>
 
       {/* Job Search Results Below the Background Image */}
 
       {showResults && (
-        <Box
-          sx={{
-            background:
-              "linear-gradient(to left, #CC0000, #FFFFFF, #FFFFFF, #599ED4)",
-            width: "100%",
-            height: "70px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            mb: 2,
-          }}
-        >
-          <Typography
-            variant="h4"
-            color="error"
+  <Box
+    sx={{
+      background:
+        "linear-gradient(to left, #CC0000, #FFFFFF, #FFFFFF, #599ED4)",
+      width: "100%",
+      height: "70px",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      mb: 2,
+      px: 2,
+    }}
+  >
+    <Typography
+      variant="h5"
+      color="error"
+      sx={{
+        fontWeight: "bold",
+        background: "linear-gradient(to right, #CC0000, #599ED4)",
+        WebkitBackgroundClip: "text",
+        color: "transparent",
+        textAlign: "center",
+        fontFamily: "Inter",
+      }}
+    >
+      Career Openings ({jobResults.length})
+    </Typography>
+  </Box>
+)}
+
+{showResults && (
+  <Container sx={{ mt: 2, width: "100%" }}>
+    <Grid container spacing={2} justifyContent="center">
+      {jobResults.map((job, index) => (
+        <Grid item xs={12} sm={10} md={8} key={index}>
+          <Card
             sx={{
-              fontWeight: "bold",
-              background: "linear-gradient(to right, #CC0000, #599ED4)",
-              WebkitBackgroundClip: "text",
-              color: "transparent",
-              mb: 2,
-              mt: 2,
-              fontFamily: "Inter",
+              border: "2px solid #008FFF",
+              boxShadow: 2,
+              borderRadius: "10px",
+              transition: "0.3s",
+              "&:hover": { boxShadow: 5 },
             }}
           >
-            Career Openings ({jobResults.length})
-          </Typography>
-        </Box>
-      )}
-
-      {showResults && (
-        <Container sx={{ mt: 4, height: "450px" }}>
-          {jobResults.map((job, index) => (
-            <Card
-              key={index}
+            <CardContent
               sx={{
-                mb: 2,
-                border: "2px solid #008FFF",
-                boxShadow: 2,
-                borderRadius: "10px",
-                height: "100px",
-                transition: "0.3s",
-                "&:hover": { boxShadow: 5 },
+                display: "flex",
+                flexDirection: { xs: "column", sm: "row" },
+                justifyContent: "space-between",
+                alignItems: "center",
+                textAlign: "center",
               }}
             >
-              <CardContent
-                sx={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}
-              >
-                <Box sx={{ flex: 1, textAlign: "left" }}>
-                  <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-                    {job.title}
-                  </Typography>
-                  <Typography variant="subtitle1" color="text.secondary">
-                    {job.location}
-                  </Typography>
-                </Box>
-                <Box sx={{ flex: 1, textAlign: "center" }}>
-                  <Typography variant="subtitle2">
-                    Posted on {job.datePosted}
-                  </Typography>
-                </Box>
-                <Box sx={{ flex: 1, textAlign: "right" }}>
-                  <Button
-                    variant="contained"
-                    color="error"
-                    sx={{
-                      mt: 1,
-                      textTransform: "none !important",
-                      fontSize: "15px",
-                    }}
-                    onClick={() => handleApply(job.id)}
+              <Box sx={{ flex: 1, textAlign: "left" }}>
+                <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                  {job.title}
+                </Typography>
+                <Typography variant="subtitle1" color="text.secondary">
+                  {job.location}
+                </Typography>
+              </Box>
+              <Box sx={{ flex: 1, textAlign: "center", mt: { xs: 1, sm: 0 } }}>
+                <Typography variant="subtitle2">
+                  Posted on {job.datePosted}
+                </Typography>
+              </Box>
+              <Box sx={{ flex: 1, textAlign: "right", mt: { xs: 1, sm: 0 } }}>
+                <Button
+                  variant="contained"
+                  color="error"
+                  sx={{ textTransform: "none", fontSize: "15px" }}
+                  onClick={() => handleApply(job.id)}
+                >
+                  Apply Now
+                </Button>
+              </Box>
+            </CardContent>
+          </Card>
+        </Grid>
+      ))}
+    </Grid>
+  </Container>
 
-                  >
-                    Apply Now
-                  </Button>
-                </Box>
-              </CardContent>
-            </Card>
-          ))}
-        </Container>
       )}
       <Box
         sx={{

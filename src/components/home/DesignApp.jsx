@@ -29,10 +29,10 @@ const DesignApp = () => {
         <Box sx={{ textAlign: 'center', mb: 6 }}>
           <Box sx={{ height: 5, width: 80, mx: 'auto', background: 'linear-gradient(90deg,#599ED4,#CC0000)', mb: 2 }} />
           <Typography variant="h4" sx={{ mb: 1 }}>
-            Our design and
+            Why To Choose
           </Typography>
           <Typography variant="h4" fontWeight="bold">
-            development approach
+            Compunet Connections
           </Typography>
         </Box>
 

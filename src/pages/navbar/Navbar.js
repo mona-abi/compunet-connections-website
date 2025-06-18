@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate, useLocation } from 'react-router-dom';
+
 import {
   AppBar,
   Toolbar,
@@ -15,21 +17,20 @@ import {
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import searchImage from "../../images/navbarimg/searchImage.png";
-
 import CloseIcon from "@mui/icons-material/Close";
+import logo from "../../images/navbarimg/Logo 1.png";
 import "./Navbar.css";
 
-import logo from "../../images/navbarimg/Logo 1.png";
-
 const Navbar = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState("Home");
+  // const [activeTab, setActiveTab] = useState("Home");
 
   const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
   const toggleSearch = () => setSearchOpen(!searchOpen);
-
-  // Detect if the screen size is mobile
   const isMobile = useMediaQuery("(max-width: 900px)");
 
   const navItems = [
@@ -52,20 +53,18 @@ const Navbar = () => {
       >
         <Toolbar sx={{ paddingLeft: "5px !important", paddingRight: "10px" }}>
           {/* Logo */}
-          <Link to="/home">
+          <Link to="/">
             <img src={logo} alt="Compunet Logo" className="logo" />
           </Link>
 
           <Box sx={{ flexGrow: 1 }} />
+          
+          {/* 
+          Search Bar
           {searchOpen ? (
             <Box className="search-box">
-              <TextField
-                variant="outlined"
-                size="small"
-                placeholder="Search..."
-                className="search-input"
-              />
-              <IconButton className="close-icon" sx={{}} onClick={toggleSearch} >
+              <TextField variant="outlined" size="small" placeholder="Search..." className="search-input" />
+              <IconButton className="close-icon" onClick={toggleSearch}>
                 <CloseIcon sx={{ fontSize: 15 }} />
               </IconButton>
             </Box>
@@ -78,9 +77,10 @@ const Navbar = () => {
               className="search-img"
               onClick={toggleSearch}
             />
-          )}
+          )} 
+          */}
 
-          {/* Navbar Links - Show only on desktop */}
+          {/* Desktop Navigation */}
           {!isMobile && (
             <Box className="nav-links">
               {navItems.map((item) => (
@@ -88,34 +88,36 @@ const Navbar = () => {
                   key={item.label}
                   component={Link}
                   to={item.path}
-                  className={`nav-button ${
-                    activeTab === item.label ? "active" : ""
-                  }`}
-                  onClick={() => setActiveTab(item.label)}
+                  // className={`nav-button ${activeTab === item.label ? "active" : ""}`}
+                  // onClick={() => setActiveTab(item.label)}
+                  className={`nav-button ${location.pathname === item.path ? "active" : ""}`}
                 >
                   {item.label}
                 </Button>
               ))}
+              {/* Fixed "Book a Call" button */}
+              <Button
+                className="book-call-btn"
+                onClick={() => {
+                  navigate("/contact");
+                  window.scrollTo(0, 0);
+                }}
+              >
+                Book a Call
+              </Button>
             </Box>
           )}
 
-          {/* "Book a Call" Button */}
-          {!isMobile && <Button className="book-call-btn">Book a call</Button>}
-
-          {/* Hamburger Menu for Mobile */}
+          {/* Mobile Hamburger Menu */}
           {isMobile && (
-            <IconButton
-              edge="end"
-              className="menu-icon"
-              onClick={handleDrawerToggle}
-            >
+            <IconButton edge="end" className="menu-icon" onClick={handleDrawerToggle}>
               <MenuIcon />
             </IconButton>
           )}
         </Toolbar>
       </AppBar>
 
-      {/* Mobile Sidebar - Show only on mobile */}
+      {/* Mobile Drawer Menu */}
       {isMobile && (
         <Drawer anchor="right" open={mobileOpen} onClose={handleDrawerToggle}>
           <List>
@@ -125,16 +127,23 @@ const Navbar = () => {
                 key={item.label}
                 component={Link}
                 to={item.path}
-                onClick={() => {
-                  setActiveTab(item.label);
-                  handleDrawerToggle();
-                }}
+                onClick={handleDrawerToggle}
               >
                 <ListItemText primary={item.label} />
               </ListItem>
             ))}
+            {/* Fixed "Book a Call" button inside mobile menu */}
             <ListItem>
-              <Button className="book-call-btn">Book a call</Button>
+              <Button
+                className="book-call-btn"
+                onClick={() => {
+                  handleDrawerToggle();
+                  navigate("/contact");
+                  window.scrollTo(0, 0);
+                }}
+              >
+                Book a Call
+              </Button>
             </ListItem>
           </List>
         </Drawer>

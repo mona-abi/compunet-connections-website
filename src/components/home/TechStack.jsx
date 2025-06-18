@@ -32,7 +32,7 @@ const TechStack = () => {
       <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
         <Box sx={{ mb: 2, height: 5, width: 80, background: 'linear-gradient(90deg,#599ED4,#CC0000)' }} />
         <Typography variant="h4" sx={{ mb: 2 }}>Our</Typography>
-        <Typography variant="h4" fontWeight="bold">Teck Stack</Typography>
+        <Typography variant="h4" fontWeight="bold">Tech Stack</Typography>
       </Box>
 
       {/* <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-evenly' ,flexWrap:'wrap'}}>

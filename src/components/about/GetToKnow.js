@@ -127,7 +127,7 @@ const GetToKnow = () => {
                   <Typography variant="subtitle1" fontWeight="bold" fontSize="17px" color="#000">
                     {card.subtitle}
                   </Typography>
-                  <Typography variant="body2" mt={1} color="text.secondary" textAlign="justify">
+                  <Typography variant="body2" mt={1} color="text.secondary" textAlign="left">
                     {card.description}
                   </Typography>
                 </CardContent>

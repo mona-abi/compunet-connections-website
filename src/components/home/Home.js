@@ -10,14 +10,13 @@ import TechStack from "./TechStack";
 import Working from "./Working";
 import Milestone from "./Milestone";
 import Design from "./DesignApp";
-import Dash from "./Dash";
 import Kural from "./Kural";
 
 const Home = () => {
   return (
     <Box sx={{ width: "100%" }}>
       {/* Fixed position button */}
-      <Button
+      {/* <Button
         sx={{
           position: 'fixed',     
           bottom: 60,           
@@ -34,7 +33,7 @@ const Home = () => {
         }}
       >
         Book a call
-      </Button>
+      </Button> */}
 
       <GetStarted />
       {/* <Dash/> */}

@@ -32,7 +32,7 @@ const Services = () => {
         <Box
           sx={{
             width: "90%",
-            maxWidth: "900px",
+            maxWidth: "60rem",
             backgroundColor: "white",
             boxShadow: 3,
             borderRadius: 2,
@@ -56,8 +56,8 @@ const Services = () => {
             >
               SERVICES
             </Typography>
-            <Typography sx={{ fontSize: "18px", mt: 2, textAlign: "justify", color: "#555" }}>
-              Compunet Connections's journey began when founder Kavitha VB discovered an urgent need on the
+            <Typography sx={{ fontSize: "18px", mt: 2, textAlign: "left", color: "#555" }}>
+              Compunet Connections's journey began when founder Venkatesh B discovered an urgent need on the
               market for great Software Development Services. If you're a Founder or Entrepreneur in Retail,
               Healthcare, or Consumer Services struggling with efficient customer service and low maintenance
               costs, you're not alone. Many companies faced the same issues, so we created a solution.
@@ -65,7 +65,7 @@ const Services = () => {
             </Typography>
           </Box>
           <Box sx={{ flex: 1, display: "flex", justifyContent: "center", mt: { xs: 3, md: 0 } }}>
-            <img src={serviceImage} alt="Services" style={{ width: "90%", borderRadius: "10px" }} />
+            <img src={serviceImage} alt="Services" style={{ width: "70%", borderRadius: "10px" }} />
           </Box>
         </Box>
       </Box>
