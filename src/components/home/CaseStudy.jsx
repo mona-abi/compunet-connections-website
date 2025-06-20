@@ -109,7 +109,7 @@ const CaseStudy = () => {
       fullWidth
       variant="contained"
       onClick={()=>{
-        navigate("/retrax")
+        navigate("/retrex")
          window.scrollTo(0, 0); }}
       sx={{
         backgroundColor: '#CC0000',

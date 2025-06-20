@@ -46,7 +46,7 @@ const caseStudies = [
     cardBackgroundColor: "#E7DAED",
     imageBackgroundColor: "#CEC0FF",
     image: image3,
-    path:"/retrax"
+    path:"/retrex"
   },
   {
     title: "CMS, Australia",

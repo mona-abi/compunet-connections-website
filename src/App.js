@@ -15,7 +15,16 @@ import JobDetailsPage from "./components/Careers/JobDetailsPage";  // Import Job
 import ApplyFormPage from "./components/Careers/ApplyFormPage";
 import ApplicationSuccess from "./components/Careers/ApplicationSuccess";
 import Book from "./components/Book/Book";
-import ScrollTop from "./components/ScrollTop"
+import ScrollTop from "./components/ScrollTop";
+import Raqamyah from "./components/caseStudies/raqamyah";
+import Cms from "./components/caseStudies/Cms";
+import Retrex from "./components/caseStudies/Retrax";
+import Nhm from "./components/caseStudies/Nhm";
+import Hlf from "./components/caseStudies/Hlf";
+import Aids from "./components/caseStudies/Aids";
+
+
+
 
 
 
@@ -42,7 +51,14 @@ const App = () => {
         <Route path="/job-details/1" element={<JobDetailsPage />} /> 
         <Route path="/apply" element={<ApplyFormPage />} /> 
         <Route path="/application-success" element={<ApplicationSuccess  />} />
-        <Route path="/Book" element={<Book />} /> 
+        <Route path="/Book" element={<Book />} />
+        <Route path="/raqamyah" element={<Raqamyah />} />
+        <Route path="/cms" element={<Cms />} />
+        <Route path="/aids" element={<Aids/>} />
+        <Route path="/nhm" element={<Nhm />} />
+        <Route path="/hlf" element={<Hlf />} />
+        <Route path="/retrex" element={<Retrex />} />
+
       </Routes>
       <Footer />
     </Router>
